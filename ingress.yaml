@@ -4,14 +4,10 @@ metadata:
   name: mynameisingress
 spec:
   rules:
-  - host: your host name
+  - host: yourhostname
     http:
       paths:
       - path: /
-        backend:
-          serviceName: nginx
-          servicePort: http
-      - path: /v1
         backend:
           serviceName: nginx
           servicePort: http
