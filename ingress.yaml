@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: malabel
+  # annotations:
+  #   kubernetes.io/ingress.class: nginx
+  #  nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: mytestnginx.com
+    http:
+      paths:
+      - path: /
+        backend:
+          #serviceName: mynginxserver
+          serviceName: nginx
+          servicePort: http
+      - path: /v1
+        backend:
+          serviceName: nginx
+          servicePort: http
